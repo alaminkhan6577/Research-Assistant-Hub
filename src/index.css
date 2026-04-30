@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #0D1B2A;
+  --color-gold: #F4A900;
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Lato", sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-sans text-gray-800 bg-white;
+  }
+  h1, h2, h3, h4 {
+    @apply font-serif;
+  }
+}
+
+.mesh-gradient {
+  background-color: #0d1b2a;
+  background-image: radial-gradient(at 0% 0%, hsla(210,100%,13%,1) 0, transparent 50%), 
+                    radial-gradient(at 50% 0%, hsla(41,100%,48%,0.15) 0, transparent 50%),
+                    radial-gradient(at 100% 0%, hsla(210,100%,20%,1) 0, transparent 50%);
+}
+
+@keyframes pulse-custom {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+  70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+.animate-whatsapp {
+  animation: pulse-custom 2s infinite;
+}
